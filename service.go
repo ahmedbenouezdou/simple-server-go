@@ -14,18 +14,18 @@ type Result struct {
 }
 
 func HandleIndex (w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "It works\n")
+	io.WriteString(w, "<h1>It works</h1> \n")
 }
 
 func getExemple (w http.ResponseWriter, r *http.Request){
 
 	w.Header().Set("Content-Type", "application/json")
-	result, _ := json.Marshal(Result{"tee", "dub"})
-	io.WriteString(w, string(result))
+	retrunValue, _ := json.Marshal(Result{"first", "last"})
+	io.WriteString(w, string(retrunValue))
 }
 
 func postExemple (w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	log.Println(r.PostForm)
-	io.WriteString(w, "post\n")
+	log.Println(r.PostFormValue("test"))
+	io.WriteString(w, "<h2>post</h2> \n")
 }
