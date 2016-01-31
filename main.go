@@ -11,7 +11,7 @@ func main(){
 	http.HandleFunc("/getExemple",GetOnly(getExemple))
 	http.HandleFunc("/postExemple",PostOnly(postExemple))
 
-	log.Printf("About to listen on 10443. Go to https://127.0.0.1:8080/")
+	log.Printf("About to listen on 10443. Go to http://127.0.0.1:8080/ or http://localhost:8080")
 
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {

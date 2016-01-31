@@ -13,6 +13,9 @@ go build
 ./simple-server-go
 
 ```
+## Getting Test
 
+```bash
 * http://localhost:8080/getExemple
 * http://localhost:8080/PostExemple
+```

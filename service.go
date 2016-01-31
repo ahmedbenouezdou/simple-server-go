@@ -12,18 +12,23 @@ type Result struct {
 	FirstName string `json:"first"`
 	LastName  string `json:"last"`
 }
-
+//index
 func HandleIndex (w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "<h1>It works</h1> \n")
 }
 
+/**
+function get
+ */
 func getExemple (w http.ResponseWriter, r *http.Request){
-
 	w.Header().Set("Content-Type", "application/json")
 	retrunValue, _ := json.Marshal(Result{"first", "last"})
 	io.WriteString(w, string(retrunValue))
 }
 
+/**
+function post
+ */
 func postExemple (w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	log.Println(r.PostFormValue("test"))

@@ -6,7 +6,6 @@ import (
 
 type handler func(w http.ResponseWriter, r *http.Request)
 
-
 func GetOnly(h handler) handler {
 
     return func(w http.ResponseWriter, r *http.Request) {
