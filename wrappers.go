@@ -27,3 +27,26 @@ func PostOnly(h handler) handler {
         http.Error(w, "post serve only", http.StatusMethodNotAllowed)
     }
 }
+
+func DeleteOnly(h handler) handler {
+
+    return func(w http.ResponseWriter, r *http.Request) {
+        if r.Method == "DELETE" {
+            h(w, r)
+            return
+        }
+        http.Error(w, "Delete serve only", http.StatusMethodNotAllowed)
+    }
+}
+
+func PutOnly(h handler) handler {
+
+    return func(w http.ResponseWriter, r *http.Request) {
+        if r.Method == "PUT" {
+            h(w, r)
+            return
+        }
+        http.Error(w, "put serve only", http.StatusMethodNotAllowed)
+    }
+}
+
