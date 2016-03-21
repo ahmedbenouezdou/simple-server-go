@@ -16,6 +16,6 @@ go build
 ## Getting Test
 
 ```bash
-* http://localhost:8080/getExemple
-* http://localhost:8080/PostExemple
+* http://localhost:9000/getExemple
+* http://localhost:9000/PostExemple
 ```
